@@ -54,7 +54,7 @@ if Precio > 500:
     descuento += 7
 if dia == "domingo" or dia == "sabado" or dia == "viernes":
     descuento += 15
-    print("¡Felicidades! Has comprado en un día especial, tienes un descuento del 15% adicional.")
+    print(f"¡Felicidades! Has comprado en el dia {dia}, tienes un descuento del 15% adicional.")
 # Verificamos si el descuento total supera el 30%
 if descuento > 30: 
     descuento = 30
