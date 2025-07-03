@@ -1,12 +1,12 @@
 import random
 #creamos las variables necesarias
 descuento = 0
-def validar_numero(a,b,c):
+def validar_numero(precio,n_productos,n_compras_echas):
     try:
-        a = float(a)
-        b = int(b)
-        c = int(c)
-        if a < 0 or b < 0 or c < 0:
+        precio = float(precio)
+        n_productos = int(n_productos)
+        n_compras_echas = int(n_compras_echas)
+        if precio < 0 or n_productos < 0 or n_compras_echas < 0:
             print("Por favor, ingrese valores positivos.")
             return False
         else:
