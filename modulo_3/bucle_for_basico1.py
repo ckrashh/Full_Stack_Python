@@ -8,7 +8,7 @@
 """
 
 print("Codifica el ejercicio 1. Básico")
-for i in range (1,100):
+for i in range (0,101):
     print (i)
 
 print("Codifica el ejercicio 2. Múltiples de 2")
