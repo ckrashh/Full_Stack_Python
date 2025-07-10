@@ -38,17 +38,21 @@ print(coordenadas)
 * BONUS: Presenta cada entrada con el siguiente formato: nombre - [Nombre del cantante], pais - [País]"""
 print("\n2. Ejercicio bonus")
 for i in range(len(cantantes)):
-    print(f"Nombre - {cantantes[i]['nombre']}, País - {cantantes[i]['pais']}")
+    for clave, valor in cantantes[i].items():
+        if clave == "pais":
+            print(f"{clave} - {valor}")
+        else:        
+            print(f"{clave} - {valor}", end=", ")
 
 """3. Obtener valores específicos desde una lista de diccionarios:  Utilizando la lista cantantes, imprime por separado todos los valores correspondientes a la clave "nombre".
  Luego, imprime todos los valores correspondientes a la clave "pais"."""
 print("\n3. Obtener valores específicos desde una lista de diccionarios")
 print("Clave Nombre")
 for i in range(len(cantantes)):
-   print(f"Nombre: {cantantes[i]["nombre"]}")
-print("Clave Pais")
+   print(f"{cantantes[i]["nombre"]}")
+print("\nClave Pais")
 for i in range(len(cantantes)):
-    print(f"Pais: {cantantes[i]["pais"]}")
+    print(f"{cantantes[i]["pais"]}")
 
 """4. Recorrer un diccionario con listas como valores:  Dado el siguiente diccionario
 
