@@ -48,8 +48,13 @@ que reciba una lista de diccionarios y recorra cada diccionario de la lista e im
 
 def iterar_diccionario(lista):
     for diccionario in lista:
+        cont = 0
         for Clave, valor in diccionario.items():
-            print(f"{Clave} - {valor}", end=", ")
+            cont += 1
+            if cont == len(diccionario):
+                print(f"{Clave} - {valor}")
+            else:
+                print(f"{Clave} - {valor}", end=", ")
         print()
         
 cantantes = [
