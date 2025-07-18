@@ -74,7 +74,7 @@ def cambiar_estado_tarea(nombre, estado):
 
 #funcion para guardar la tarea
 def guardar_tarea():
-    os.system(f'echo "--- LISTA DE TAREAS ---" >> evaluacion_de_modulo_3.txt')
+    os.system(f'echo "--- LISTA DE TAREAS FECHA {datetime.now().strftime("%d-%m-%Y")} ---" >> evaluacion_de_modulo_3.txt')
     for tarea in list_tarea:
         os.system(f'echo Nombre: {tarea["nombre"]} >> evaluacion_de_modulo_3.txt')
         os.system(f'echo Descripcion: {tarea["descripcion"]} >> evaluacion_de_modulo_3.txt')
@@ -125,7 +125,7 @@ while True:
                 print("\nAgregar Tarea")
                 nombre = input("Nombre tarea: ")
                 descripcion = input("Descripcion tarea: ")
-                fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                fecha = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
                 estado = False 
                 if validar_campos(nombre, descripcion, fecha, estado):
                     agregar_tarea(nombre, descripcion, fecha, estado)
