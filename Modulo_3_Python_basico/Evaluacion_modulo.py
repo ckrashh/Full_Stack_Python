@@ -1,6 +1,9 @@
 #importar fecha y hora
 from datetime import datetime
 
+#importar os
+import os
+
 #importar math para validar infinitos y NaN
 import math
 
@@ -67,7 +70,17 @@ def cambiar_estado_tarea(nombre, estado):
                     return
         print(f"\nLa tarea {nombre} no existe.")
     else:
-        print("\nNo hay tareas en la lista.")            
+        print("\nNo hay tareas en la lista.")      
+
+#funcion para guardar la tarea
+def guardar_tarea():
+    os.system(f'echo "--- LISTA DE TAREAS ---" >> evaluacion_de_modulo_3.txt')
+    for tarea in list_tarea:
+        os.system(f'echo Nombre: {tarea["nombre"]} >> evaluacion_de_modulo_3.txt')
+        os.system(f'echo Descripcion: {tarea["descripcion"]} >> evaluacion_de_modulo_3.txt')
+        os.system(f'echo Fecha de creacion: {tarea["fecha"]} >> evaluacion_de_modulo_3.txt')
+        os.system(f'echo Estado: {tarea["estado"]} >> evaluacion_de_modulo_3.txt')
+        os.system(f'echo -------------------------------------- >> evaluacion_de_modulo_3.txt')
 
 #funcion para el estado de la tarea
 def estado_tarea(estado):
@@ -144,5 +157,6 @@ while True:
                     eliminar_tarea(nombre)
                     break
         elif opcion == "5":
+            guardar_tarea()
             print("\nFin del programa")
             break
