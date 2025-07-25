@@ -10,7 +10,7 @@ class Libro:
         print(f"Título: {self.titulo}, Autor: {self.autor}, Páginas: {self.paginas}")
 
     def leer(self,paginas):
-        if paginas > self.paginas and self.leidas > self.paginas:
+        if paginas > self.paginas or self.leidas > self.paginas:
             print("No puedes leer más páginas de las que tiene el libro.")
             return self
         self.leidas += paginas

@@ -2,7 +2,7 @@ from libro import Libro
 if __name__ == "__main__":
     libro1 = Libro("Cien años de soledad", "Gabriel García Márquez", 417, 0)
     libro1.mostrar_info()
-    libro1.leer(100)
+    libro1.leer(500)
     libro1.leidos()
     libro1.progreso()
 
