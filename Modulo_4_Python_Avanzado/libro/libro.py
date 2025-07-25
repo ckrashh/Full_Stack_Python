@@ -10,8 +10,7 @@ class Libro:
         print(f"Título: {self.titulo}, Autor: {self.autor}, Páginas: {self.paginas}")
 
     def leer(self,paginas):
-        if paginas > self.paginas or self.leidas > self.paginas:
-            print("No puedes leer más páginas de las que tiene el libro.")
+        if not self.validar_paginas(paginas):
             return self
         self.leidas += paginas
         return self 
@@ -33,4 +32,10 @@ class Libro:
             print("Este es un libro largo.")
         else:
             print("Este es un libro corto.")
-    
+
+    def validar_paginas(self, paginas):
+        if self.paginas < self.leidas + paginas:
+            print("No puedes leer más páginas de las que tiene el libro.")
+            return False
+        else:
+            return True

@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     libro2 = Libro.desde_string("El amor en los tiempos del cólera,Gabriel García Márquez,368")
     libro2.mostrar_info()
-    libro2.leer(200).leer(50).leidos().progreso()
+    libro2.leer(200).leer(170).leidos().progreso()
 
     Libro.es_libro_largo(libro1.paginas)
     Libro.es_libro_largo(libro2.paginas)
