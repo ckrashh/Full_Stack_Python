@@ -12,7 +12,7 @@ class TarjetaCredito:
         TarjetaCredito.tarjetas.append(self)
 
     def compra(self, monto):
-        if self.validar_monto(monto):
+        if self.validar_monto(self.saldo_pagar, monto, self.limite_credito):
             self.saldo_pagar += monto
         return self    
  
@@ -31,11 +31,13 @@ class TarjetaCredito:
         self.saldo_pagar += self.saldo_pagar * self.intereses
         return self
 
-    def validar_monto(self, monto):
-        if self.saldo_pagar + monto > self.limite_credito:
+    @staticmethod
+    def validar_monto(saldo_pagar, monto, limite_credito):
+        if  saldo_pagar + monto > limite_credito:
             print(f"Tarjeta Rechazada.\nTu compra por ${monto} pesos debido a que has alcanzado tu límite de crédito.")
             return False
         return True
+    
     @classmethod
     def mostrar_tarjetas(cls):
         if not cls.tarjetas:
