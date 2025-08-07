@@ -8,6 +8,7 @@ class Bicicleta:
         self.precio = precio
         self.estado = estado
         
+        # Validar que el id no exista
         if self.val_id(id,self.bicicletas):
             Bicicleta.bicicletas.append(self)
 
@@ -16,11 +17,13 @@ class Bicicleta:
         return f"Bicicleta {self.marca} {self.modelo} con estado {self.estado} y precio por hora {self.precio}." 
     
     @classmethod
+    # muestra las bicicletas
     def mostrar_bicicletas(cls):
         for bicicleta in cls.bicicletas:
             print(bicicleta)
 
     @staticmethod
+    # Valida que el id no exista
     def val_id(id,biciletas):
         try:
             id = int(id)
@@ -38,6 +41,7 @@ class Bicicleta:
             return False
             
     @staticmethod
+    # muestra las lineas
     def lineas():
         print("-" * 50)
     
