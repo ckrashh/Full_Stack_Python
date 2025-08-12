@@ -13,8 +13,8 @@ class Bicicleta:
             Bicicleta.bicicletas.append(self)
 
     def __str__(self):
-        Bicicleta.lineas()
-        return f"Bicicleta {self.marca} {self.modelo} con estado {self.estado} y precio por hora {self.precio}." 
+        # muestra la bicicleta
+        return f"Bicicleta con id {self.id} de la marca {self.marca} y modelo {self.modelo} con estado {self.estado} y precio por hora {self.precio}." 
     
     @classmethod
     # muestra las bicicletas
@@ -29,15 +29,15 @@ class Bicicleta:
             id = int(id)
             for bicicleta in biciletas:
                 if bicicleta.id == id:
-                    Bicicleta.lineas()
                     print("Ya existe una bicicleta con el id ingresado.")
+                    Bicicleta.lineas()
                     return False
-            Bicicleta.lineas()
             print("Bicicleta agregada correctamente.")
+            Bicicleta.lineas()
             return True
         except ValueError:
-            Bicicleta.lineas()
             print("El id debe ser un entero.")
+            Bicicleta.lineas()
             return False
             
     @staticmethod
